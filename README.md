@@ -19,88 +19,92 @@ For this project, I created to Virtual machines to serve as my home lab. The fir
 <h2>Program walk-through:</h2>
 
 <p align="center">
-Create Windows Server 2019 VM: <br/>
-<img src="AD Home Lab/1 Create Server VM.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Create Ubuntu Server as attack VM: <br/>
+<img src="EDR-Home-Lab/1- Create Ubuntu Server as attack VM.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Configure Active Directory:  <br/>
-<img src="AD Home Lab/2 Configure AD.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Create Windows 10 VM as the vulnerable computer:  <br/>
+<img src="EDR-Home-Lab/2- Create Windows 10 VM as Vulnerable VM.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Add New User in AD Manually: <br/>
-<img src="AD Home Lab/3 Add user in AD.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Install LimaCharlie on Windows 10 VM for Endpoint, Detection, and Response: <br/>
+<img src="EDR-Home-Lab/3-Install Lima Charlie for EDR.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Connect Server to the Internet:  <br/>
-<img src="AD Home Lab/4 Connect Server to the Internet.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Configure sensor in LimaCharlie to generate logs:  <br/>
+<img src="EDR-Home-Lab/4 Installing LC Sensor on Windows VM.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Configure DHCP Server :  <br/>
-<img src="AD Home Lab/5 Configure DHCP server.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Create a rule in LimaCharlie to ingest Sysmon logs:  <br/>
+<img src="EDR-Home-Lab/5-Create Rule to Collect SysMon Logs.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Script for using Powershell to add 1000 users to AD:  <br/>
-<img src="AD Home Lab/6 Script for creating 1k users.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Access Ubuntu Server through SSH using Powershell:  <br/>
+<img src="EDR-Home-Lab/6 Access linux vm using ssh thorugh powershell.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Run Script in Powershell to create new users:  <br/>
-<img src="AD Home Lab/7 Running script to create users.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Download Sliver on Ubuntu Server:  <br/>
+<img src="EDR-Home-Lab/7- Download Sliver on Linux VM.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Create Client VM using Windows 10:  <br/>
-<img src="AD Home Lab/8 Create Client VM.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Use Sliver to generate malicious payload:  <br/>
+<img src="EDR-Home-Lab/8- Create Malware payload in sliver.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Final Set Up of Domain Controller:  <br/>
-<img src="AD Home Lab/9 Final Set up of Domain Controller.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Verify Malware is working:  <br/>
+<img src="EDR-Home-Lab/9-Verify Malware is working.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Users Added to AD:  <br/>
-<img src="AD Home Lab/10 Users Added to AD.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Begin attack by collecting information on infected machine:  <br/>
+<img src="EDR-Home-Lab/10-Gather into on infected vm.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Create Windows Server 2019 VM: <br/>
-<img src="AD Home Lab/1 Create Server VM.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Examine network traffic using Netstat: <br/>
+<img src="EDR-Home-Lab/11- Examine network traffic with netstat.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Configure Active Directory:  <br/>
-<img src="AD Home Lab/2 Configure AD.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Review logs created in EDR:  <br/>
+<img src="EDR-Home-Lab/12- Examine EDR logs.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Add New User in AD Manually: <br/>
-<img src="AD Home Lab/3 Add user in AD.png" height="80%" width="80%" alt="AD Lab Steps"/>
+View file hash for the malicious download: <br/>
+<img src="EDR-Home-Lab/13-run-file-hash-for-malicious-downlaod-through-virus-total.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Connect Server to the Internet:  <br/>
-<img src="AD Home Lab/4 Connect Server to the Internet.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Search for the file hash in VirusTotal:  <br/>
+<img src="EDR-Home-Lab/14-run-file-hash-for-malicious-downlaod-through-virus-total.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Configure DHCP Server :  <br/>
-<img src="AD Home Lab/5 Configure DHCP server.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Preform an LSASS Credential Dump:  <br/>
+<img src="EDR-Home-Lab/15-preform-LSASS-dump.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Script for using Powershell to add 1000 users to AD:  <br/>
-<img src="AD Home Lab/6 Script for creating 1k users.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Review logs created by preforming LSASS dump:  <br/>
+<img src="EDR-Home-Lab/16 Detect-LSASS-Dump.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Run Script in Powershell to create new users:  <br/>
-<img src="AD Home Lab/7 Running script to create users.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Create a rule to report LSASS credential dumping:  <br/>
+<img src="EDR-Home-Lab/17-Create-rule-to-report-LSASS-dump.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Create Client VM using Windows 10:  <br/>
-<img src="AD Home Lab/8 Create Client VM.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Verify the new rule is functioning as designed:  <br/>
+<img src="EDR-Home-Lab/18-Verify-new-rule-took-effect.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Final Set Up of Domain Controller:  <br/>
-<img src="AD Home Lab/9 Final Set up of Domain Controller.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Attempt Volume Shadow Copies Deletion:  <br/>
+<img src="EDR-Home-Lab/19-Attempt-Volume-Shadow-Copies-Deletion.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Users Added to AD:  <br/>
-<img src="AD Home Lab/10 Users Added to AD.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Review logs created by VSS deletion attempt:  <br/>
+<img src="EDR-Home-Lab/20-Detect-VSC-Deletion-Attempt.png" height="80%" width="80%" alt="AD Lab Steps"/>
 <br />
 <br />
-Client Terminal Added in AD:  <br/>
-<img src="AD Home Lab/11 Client Terminal Added in AD.png" height="80%" width="80%" alt="AD Lab Steps"/>
+Create a rule to detect and block a VSS deletion attempt:  <br/>
+<img src="EDR-Home-Lab/21-Create-Rule-To-Block-VSS-Attack.png" height="80%" width="80%" alt="AD Lab Steps"/>
+<br />
+<br />
+Verify the new rule terminates our connection to the infected machine:  <br/>
+<img src="EDR-Home-Lab/22-Verify-Rule.png" height="80%" width="80%" alt="AD Lab Steps"/>
 </p>
 
 <!--
